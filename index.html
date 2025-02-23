@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Knewave&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="overlay">
+            <div class="pizza-banner">
+                <img src="pizza.png" />
+            </div>
+            <div class="title">
+                <h1>Pizza Difference Calculator</h1>
+            </div>
+            <p>Find the difference between two pizzas</p>
+        </div>
+    </header>
+    <div class="toggle">
+        <input type="checkbox" id="themeToggle" />
+        <label></label>
+    </div>
+    <div class="wrapper">
+        <form class="form">
+            <div class="input-wrap">
+                <div class="inputs">
+                    <h2>Pizza One</h2>
+                    <div class="input-row">
+                        <label>Size (Inches)</label>
+                        <input class="resetter num-imput input-pizza" type="number" id="pizza1" pattern="[0-9]*"
+                            name="pizza one" placeholder="Size">
+                    </div>
+                    <div class="input-row hide">
+                        <label>Price</label>
+                        <input class="resetter num-imput input-price" type="number" id="pizza1Price" pattern="[0-9]*"
+                            name="pizza one" placeholder="Price">
+                    </div>
+                    <div class="input-row hide">
+                        <label># Of Slices</label>
+                        <input class="resetter num-imput input-slices" type="number" id="pizza1Slices" pattern="[0-9]*"
+                            name="pizza one" placeholder="Slices">
+                    </div>
+                </div>
+                <div class="inputs">
+                    <h2>Pizza Two</h2>
+                    <div class="input-row">
+                        <label>Size (Inches)</label>
+                        <input class="resetter num-imput input-pizza" type="number" id="pizza2" pattern="[0-9]*"
+                            name="pizza two" placeholder="Size">
+                    </div>
+                    <div class="input-row hide">
+                        <label>Price</label>
+                        <input class="resetter num-imput input-price" type="number" id="pizza2Price" pattern="[0-9]*"
+                            name="pizza two" placeholder="Price">
+                    </div>
+                    <div class="input-row hide">
+                        <label># Of Slices</label>
+                        <input class="resetter num-imput input-slices" type="number" id="pizza2Slices" pattern="[0-9]*"
+                            name="pizza two" placeholder="Slices">
+                    </div>
+                </div>
+            </div>
+            <div class="toggle-options">
+                <div class="toggle-row">
+                    <div>
+                        Find Price Per Square Inch
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="input-slider" id="priceSlider">
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div class="toggle-row">
+                    <div>
+                        Find Price Per Slice
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="input-slider" id="sliceSlider">
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div class="toggle-row">
+                    <div>
+                        Show Math
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="input-slider" id="mathSlider">
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+            </div>
+            <span id="error"></span>
+            <div>
+                <input type="submit" id="submit" value="Calculate Pizza Difference" class="button invalid"></input>
+            </div>
+            <div class="hide" id="resetDiv">
+                <input type="button" id="reset" value="Reset" class="button danger"></input>
+            </div>
+        </form>
+        <!-- <div class="math" style="font-size: 1.6rem; font-style: italic;">
+            Price Per Square Inch:<br>
+
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mstyle displaystyle="true">
+                    <mfrac>
+                        <mi>Price</mi>
+                        <msup>
+                            <mn>&#x3C0; r</mn>
+                            <mn>2</mn>
+                        </msup>
+                    </mfrac>
+                </mstyle>
+            </math>
+            <br><br>
+            Price Per Slice:<br>
+
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mstyle displaystyle="true">
+                    <mfrac>
+                        <mi>Price</mi>
+                        <mi># of Slices</mi>
+                    </mfrac>
+                </mstyle>
+            </math>
+        </div> -->
+        <div id="output">
+        </div>
+        <div id="scroll" style="padding: 0; margin: 0"></div>
+        <div id="pizzaOutput">
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="script.js"></script>
